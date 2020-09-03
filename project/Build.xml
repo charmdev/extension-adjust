@@ -1,0 +1,37 @@
+<xml>
+	
+	<include name="${HXCPP}/build-tool/BuildCommon.xml"/>
+	
+	<files id="common">
+		
+		<compilerflag value="-Iinclude"/>
+		
+		<file name="common/ExternalInterface.cpp"/>
+		<file name="common/extension-adjust.cpp"/>
+		
+	</files>
+	
+	<set name="SLIBEXT" value=".lib" if="windows"/>
+	<set name="SLIBEXT" value=".a" unless="windows"/>
+	<set name="SLIBEXT" value=".so" if="webos"/>
+	
+	<set name="DEBUGEXTRA" value="-debug" if="fulldebug" />
+	<set name="ARM_ARCH" value="-v7" if="HXCPP_ARMV7"/>
+	<set name="ARCH_EXTRA" value="${ARM_ARCH}" if="android"/>
+	
+	<!--<target id="NDLL" output="${LIBPREFIX}extension_adjust${MSVC_LIB_VERSION}${DEBUGEXTRA}${LIBEXTRA}" tool="linker" toolid="${STD_MODULE_LINK}">-->
+	<target id="NDLL" output="${LIBPREFIX}extension_adjust${ARCH_EXTRA}" tool="linker" toolid="${STD_MODULE_LINK}">
+
+		<outdir name="../ndll/${BINDIR}"/>
+		<ext value=".ndll" if="windows || mac || linux"/>
+		<files id="common"/>
+		
+	</target>
+	
+	<target id="default">
+		
+		<target id="NDLL"/>
+		
+	</target>
+	
+</xml>
