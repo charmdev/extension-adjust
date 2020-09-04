@@ -34,7 +34,8 @@ public class ExtensionAdjust extends Extension {
 
 	public static void trackEvent(String eventName, String eventData) {
 		AdjustEvent adjustEvent = new AdjustEvent(eventName);
-		if (eventData != null)
+		Log.i(TAG, "evt data " + eventData);
+		if (eventData != null && eventData.length() != 0)
 		{
 			try
 			{

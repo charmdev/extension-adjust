@@ -31,6 +31,7 @@ class ExtensionAdjust {
 				evtDataString = null;
 			}
 		}
+		trace(evtDataString);
 #if android
 		return extension_adjust_track_event_jni(eventName, evtDataString);
 #else
