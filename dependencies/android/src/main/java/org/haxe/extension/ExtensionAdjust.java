@@ -87,7 +87,7 @@ public class ExtensionAdjust extends Extension {
 	public void onCreate (Bundle savedInstanceState) {
 		Log.i(TAG, "----------------> on create");
 		String appToken = "7n0161fjtr40";
-		String environment = AdjustConfig.ENVIRONMENT_SANDBOX;
+		String environment = AdjustConfig.ENVIRONMENT_PRODUCTION;
 		AdjustConfig config = new AdjustConfig(mainContext, appToken, environment);
 		config.setLogLevel(LogLevel.VERBOSE);
 		Adjust.onCreate(config);
