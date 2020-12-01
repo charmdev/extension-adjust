@@ -63,7 +63,7 @@ public class ExtensionAdjust extends Extension {
 		AdjustEvent adjustEvent = new AdjustEvent(eventName);
 		adjustEvent.setRevenue(value, currency);
 		Adjust.trackEvent(adjustEvent);
-		Log.i(TAG, eventName + " tracked");
+		Log.i(TAG, eventName + " " + value + " " + currency + " tracked");
 	}
 	
 	
