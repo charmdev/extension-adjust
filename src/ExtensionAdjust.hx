@@ -58,6 +58,6 @@ class ExtensionAdjust {
 #if android
 	private static var extension_adjust_test_jni = JNI.createStaticMethod ("org.haxe.extension.ExtensionAdjust", "test", "(I)I");
 	private static var extension_adjust_track_event_jni = JNI.createStaticMethod ("org.haxe.extension.ExtensionAdjust", "trackEvent", "(Ljava/lang/String;Ljava/lang/String;)V");
-	private static var extension_adjust_track_revenue_event_jni = JNI.createStaticMethod ("org.haxe.extension.ExtensionAdjust", "trackRevenueEvent", "(Ljava/lang/String;FLjava/lang/String;)V");
+	private static var extension_adjust_track_revenue_event_jni = JNI.createStaticMethod ("org.haxe.extension.ExtensionAdjust", "trackRevenueEvent", "(Ljava/lang/String;DLjava/lang/String;)V");
 #end
 }
